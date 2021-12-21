@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import sampleFishes from '../../sample-fishes';
-import Fish from '../Fish/Fish';
+import React, {useEffect} from 'react';
 import './Home.scss';
+import agent from "../../agent/agent";
 
 const Home = () => {
-  const [fishes, setFishes] = useState({});
 
-  useEffect(() => {
-    setFishes(sampleFishes);
-  }, [fishes]);
+  React.useEffect(() => {
+    agent.Crawler.getHistory()
+      .then(res => {
+
+      }).catch(e => {
+
+    });
+  })
 
   return (
-    <div className='menu'>
-      <h1>Fishes</h1>
-      <ul>
-        {Object.keys(fishes).map(key => (
-          <Fish key={key} index={key} details={fishes[key]} />
-        ))}
-      </ul>
+    <div className='main'>
+      <h1>Start Here</h1>
     </div>
   );
 };
