@@ -1,6 +1,7 @@
 /* eslint-disable indent */
 import React from 'react';
 import {FormGroup, FormControl, Button, FormLabel} from 'react-bootstrap';
+import './MainForm.scss';
 
 class MainForm extends React.Component {
 	constructor(props) {
@@ -20,13 +21,13 @@ class MainForm extends React.Component {
 
 	getValidationState() {
 		if (this.state.value.length <= 0) return null;
-	    return (this.state.value.match(/((http|https):\/\/www\.)?.+\..+/) ) ? 'success' : 'error';
-  	}
+      return (this.state.value.match(/((http|https):\/\/www\.)?.+\..+/) ) ? 'success' : 'error';
+  }
 
-  	handleSubmit(e) {
-  		e.preventDefault();
-  		console.log(this.state.value);
-  	}
+  handleSubmit(e) {
+		e.preventDefault();
+    console.log(this.state.value);
+  }
 
 	render() {
 		return (
