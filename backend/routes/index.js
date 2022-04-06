@@ -4,11 +4,12 @@ let indexRouter = express.Router();
 indexRouter.get('/', function (req, res) {
   res.json({
     HOST: process.env.HOST,
-    MONGO_PORT: process.env.MONGO_PORT,
-    DATABASE: process.env.DATABASE,
-    DB_USER: process.env.DB_USER,
-    DB_PASSWORD: process.env.PASSWORD,
-    TOKEN_SECRET: process.env.TOKEN_SECRET,
+    //MONGO_PORT: process.env.MONGO_PORT,
+    PORT: process.env.PORT,
+    //DATABASE: process.env.DATABASE,
+    //DB_USER: process.env.DB_USER,
+    //DB_PASSWORD: process.env.PASSWORD,
+    //TOKEN_SECRET: process.env.TOKEN_SECRET,
     ಠ_ಠ: '😀😁😄',
     os: process.env.OS,
     architecture: process.env.PROCESSOR_ARCHITECTURE,
