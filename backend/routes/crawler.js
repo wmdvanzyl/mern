@@ -1,5 +1,5 @@
 import express from 'express';
-import { crawl, getHistory } from '../controllers/crawlerController';
+import { crawl, getHistory } from '../controllers/crawlerController.js';
 let crawlerRouter = express.Router();
 
 // we protect the POST, PUT and DELETE methods

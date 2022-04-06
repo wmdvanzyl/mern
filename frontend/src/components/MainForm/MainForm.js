@@ -52,7 +52,7 @@ class MainForm extends React.Component {
 					</form>
 				</div>
 			</div>
-		)
+		);
 	}
 }
 

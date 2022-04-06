@@ -1,4 +1,4 @@
-import CrawledPage from '../models/CrawledPageModel';
+import CrawledPage from '../models/CrawledPageModel.js';
 
 export const crawl = (req, res) => {
   const {url} = req.body;
