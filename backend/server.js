@@ -12,8 +12,8 @@ import morgan from 'morgan';
 import emoji from 'node-emoji';
 import responseTime from 'response-time';
 import favicon from 'serve-favicon';
-import indexRouter from './routes/index';
-import crawlerRouter from './routes/crawler';
+import indexRouter from './routes/index.js';
+import crawlerRouter from './routes/crawler.js';
 
 const app = express();
 
@@ -39,7 +39,7 @@ app.use(cookieParser());
 app.use(cors());
 
 // serve a visual favicon for the browser
-app.use(favicon(__dirname + '/favicon.ico'));
+//app.use(favicon(__dirname + '/favicon.ico'));
 
 // request logger | (dev) output are colored by response status
 app.use(morgan('dev'));
@@ -65,9 +65,15 @@ app.use(mongoSanitize());
 // mongodb connection
 mongoose
   .connect(
-    `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.HOST}:${process.env.MONGO_PORT}/${process.env.DATABASE}`,
+    //`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.HOST}:${process.env.MONGO_PORT}/${process.env.DATABASE}`,
+    //process.env.HOST,
+    // {
+    //   useCreateIndex: true,
+    //   useNewUrlParser: true,
+    //   useUnifiedTopology: true
+    // }
+    'mongodb+srv://glyph:BZQ0ZMwmqm2o41vb@cluster0.uq01s.mongodb.net/crawls?retryWrites=true&w=majority',
     {
-      useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true
     }
